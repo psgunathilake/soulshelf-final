@@ -1,59 +1,329 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+ # SoulShelf Backend API 🚀
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> Laravel REST API backend for the SoulShelf mobile application.
 
-## About Laravel
+The SoulShelf Backend is a secure RESTful API developed using Laravel 12 and MySQL 8. It powers authentication, media management, journaling, collections, planner synchronization, file uploads, offline sync support, and secure PIN-based privacy features for the SoulShelf Flutter mobile application.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# ✨ Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🔐 Authentication System
 
-## Learning Laravel
+* User Registration
+* Login & Logout
+* Email Verification
+* Forgot Password
+* Password Reset
+* Sanctum Token Authentication
+* Persistent Sessions
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 📚 Media Management
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* Books
+* Songs
+* Movies
+* TV Shows
+* Anime
+* Ratings & Status Tracking
+* Personal Reflections
+* Cover Image Uploads
 
-## Laravel Sponsors
+## 📝 Journal & Planner
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+* Daily Journal Entries
+* Mood Tracking
+* Todo Lists
+* Water Intake Tracking
+* Planner Scheduling
+* Personal Notes
 
-### Premium Partners
+## 📁 Collections
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+* Create Collections
+* Add/Remove Media
+* Collection Management
 
-## Contributing
+## 🔒 Security
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* Laravel Sanctum Protection
+* SHA-256 PIN Hashing
+* User-based Authorization Policies
+* Secure File Upload Validation
+* Protected API Routes
 
-## Code of Conduct
+## ☁️ Offline Sync Support
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* API designed for offline-first Flutter architecture
+* Sync queue compatible
+* Cache-friendly responses
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# 🛠️ Technology Stack
 
-## License
+| Technology      | Purpose              |
+| --------------- | -------------------- |
+| Laravel 12      | Backend Framework    |
+| PHP 8.2+        | Server Language      |
+| MySQL 8         | Database             |
+| Laravel Sanctum | API Authentication   |
+| Eloquent ORM    | Database ORM         |
+| REST API        | Communication Layer  |
+| Laravel Storage | File Upload Handling |
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+# 📂 Backend Architecture
+
+```text id="5i9bfz"
+Flutter App
+     ↓
+REST API Requests
+     ↓
+Laravel Controllers
+     ↓
+Services & Policies
+     ↓
+Eloquent Models
+     ↓
+MySQL Database
+```
+
+---
+
+# 📁 Project Structure
+
+```text id="7i3e0m"
+backend/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/Api/
+│   │   ├── Requests/
+│   │   └── Middleware/
+│   ├── Models/
+│   ├── Policies/
+│   └── Providers/
+├── database/
+│   ├── migrations/
+│   └── seeders/
+├── routes/
+│   └── api.php
+├── storage/
+├── public/
+└── .env
+```
+
+---
+
+# 🔗 Main API Endpoints
+
+## Authentication
+
+| Method | Endpoint                    | Description         |
+| ------ | --------------------------- | ------------------- |
+| POST   | `/api/auth/register`        | Register user       |
+| POST   | `/api/auth/login`           | Login user          |
+| POST   | `/api/auth/logout`          | Logout user         |
+| GET    | `/api/auth/me`              | Get current user    |
+| POST   | `/api/auth/forgot-password` | Send reset link     |
+| POST   | `/api/auth/reset-password`  | Reset password      |
+| POST   | `/api/auth/email/resend`    | Resend verification |
+
+---
+
+## Media
+
+| Method | Endpoint          |
+| ------ | ----------------- |
+| GET    | `/api/media`      |
+| POST   | `/api/media`      |
+| GET    | `/api/media/{id}` |
+| PUT    | `/api/media/{id}` |
+| DELETE | `/api/media/{id}` |
+
+---
+
+## Journal
+
+| Method | Endpoint               |
+| ------ | ---------------------- |
+| GET    | `/api/journals`        |
+| PUT    | `/api/journals/{date}` |
+
+---
+
+## Planner
+
+| Method | Endpoint               |
+| ------ | ---------------------- |
+| GET    | `/api/planners`        |
+| PUT    | `/api/planners/{date}` |
+
+---
+
+## Collections
+
+| Method | Endpoint                |
+| ------ | ----------------------- |
+| GET    | `/api/collections`      |
+| POST   | `/api/collections`      |
+| PUT    | `/api/collections/{id}` |
+| DELETE | `/api/collections/{id}` |
+
+---
+
+## File Uploads
+
+| Method | Endpoint                |
+| ------ | ----------------------- |
+| POST   | `/api/media/{id}/cover` |
+| POST   | `/api/user/avatar`      |
+| POST   | `/api/user/header`      |
+
+---
+
+# 🗄️ Database Tables
+
+* users
+* media
+* journals
+* planners
+* collections
+* collection_media
+* chat_history
+* personal_access_tokens
+
+---
+
+# 🔐 Security Features
+
+* Sanctum Bearer Token Authentication
+* Route Protection Middleware
+* User Ownership Policies
+* SHA-256 PIN Hashing
+* Secure Password Hashing
+* File Validation & Restrictions
+* Cross-user Access Protection
+
+---
+
+# 📦 Installation
+
+## 1. Clone Repository
+
+```bash id="pb77c2"
+git clone https://github.com/your-username/soulshelf.git
+cd soulshelf/backend
+```
+
+---
+
+## 2. Install Dependencies
+
+```bash id="k5cwdy"
+composer install
+```
+
+---
+
+## 3. Configure Environment
+
+Create `.env` file:
+
+```env id="6z0g7t"
+APP_NAME=SoulShelf
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
+APP_URL=http://localhost:8000
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=soulshelf
+DB_USERNAME=root
+DB_PASSWORD=your_password
+```
+
+---
+
+## 4. Generate App Key
+
+```bash id="kv2i4u"
+php artisan key:generate
+```
+
+---
+
+## 5. Run Migrations
+
+```bash id="9h2ncl"
+php artisan migrate
+```
+
+---
+
+## 6. Create Storage Link
+
+```bash id="0p2n7x"
+php artisan storage:link
+```
+
+---
+
+## 7. Start Server
+
+```bash id="i7w7z9"
+php artisan serve
+```
+
+Server runs at:
+
+```text id="r8v7sy"
+http://localhost:8000
+```
+
+---
+
+# 📤 File Storage Structure
+
+```text id="0f6g4n"
+storage/app/public/users/
+    ├── {user_id}/
+    │   ├── covers/
+    │   └── profile/
+```
+
+---
+
+# 🔄 Offline Sync Design
+
+The backend supports:
+
+* Optimistic updates
+* Queue replay support
+* Cache synchronization
+* Retry-safe API design
+* Conflict-safe updates
+
+---
+
+# 📊 Current Development Status
+
+✅ Laravel Authentication
+✅ Sanctum Integration
+✅ REST API Completed
+✅ File Upload System
+✅ Authorization Policies
+✅ Offline Sync Support
+✅ PIN Hashing
+🔄 Statistics Dashboard In Progress
+🔄 AI Chatbot Enhancements In Progress
+
+---
+
+# 👨‍💻 Developer
+
+**P.S Gunathilake**
+ 
