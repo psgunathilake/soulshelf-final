@@ -1,137 +1,258 @@
-# #   SoulShelf – Personal Media Tracker & Journal
+# SoulShelf 📚🎵🎬📝
 
-SoulShelf is a privacy-focused mobile application that allows users to "track, organize, and reflect on their media experiences" in one unified platform.
- 
- 
-   📌 About the Project
+> **Read · Watch · Listen · Journal**
 
-In today’s digital world, people consume a wide range of media such as books, movies, music, and anime. However, users often struggle to **remember what they consumed and how it made them feel**.
+SoulShelf is a cross-platform personal media tracker and digital journaling mobile application developed using Flutter. The application combines books, music, movies, TV shows, anime tracking, journaling, planning, recommendations, and personal reflections into one secure and organized platform.
 
-Existing platforms like Goodreads and MyAnimeList focus mainly on **public reviews** and **single media types**, while general tools lack structure.
+The project was developed for the **PUSL3190 Computing Project** module of the **BSc (Hons) Software Engineering** degree program.
 
- SoulShelf solves this problem**  by combining:
-* Media tracking
-* Personal journaling
-* Daily planning
-* Privacy protection
+---
 
-👉 All in one application.
+## ✨ Features
 
- 
+### 📖 Multi-Category Media Tracking
 
-## 🚀 Features
+* Track Books
+* Track Songs & Albums
+* Track Movies & TV Shows
+* Anime Support
+* Ratings & Status Management
+* Personal Reflections
 
-* 📚 Multi-Category Media Tracking 
-  Track Books, Movies, Anime, Music, and more
+### 📝 My Space
 
-* ✍️  Personal Journal System 
-  Write private reflections with formatting and images
+* Personal Journal
+* Daily Planner
+* Mood Tracking
+* Weather & Water Intake Logging
+* Birthday & Todo Tracking
+* PIN Protected Privacy Area
 
-* ⭐  Rating & Status System* 
-  Rate media and mark as Planned / Ongoing / Completed
+### 🎨 User Experience
 
-* 🔍  Search & Filtering 
-  Quickly find media using keywords and filters
+* Light / Dark Theme
+* Smooth Animations
+* Glassmorphism UI
+* Responsive Flutter Design
+* Custom Panda Branding
 
-* 📂  Collections / Albums 
-  Organize entries into categories
+### 🤖 Smart Features
 
-* 🔒  PIN-Based Privacy Lock  
-  Secure personal journal and planner data
+* Personalized Recommendation System
+* AI Chatbot Prototype
+* Search & Filtering
+* Collections / Albums
 
-* 📊 Statistics Dashboard 
-  View activity insights and progress
+### 🔐 Security
 
-* 📅  Daily Planner 
-  Manage tasks and goals
+* Laravel Sanctum Authentication
+* Email Verification
+* Password Reset
+* SHA-256 PIN Hashing
+* Secure API Communication
 
-* 🤖 AI Chatbot (Prototype) 
-  Provides guidance and simple recommendations
+---
 
- 
+## 🛠️ Technology Stack
 
-  🧠 Unique Concept
+### Frontend
 
-Unlike existing applications:
+* Flutter
+* Dart
+* Riverpod
+* Hive Local Storage
 
-* Supports  all media types in one app 
-* Focuses on  private reflection instead of public reviews 
-* Combines  tracking + journaling + planning 
-* Provides a secure and personalized experience 
+### Backend
 
- 
+* Laravel 12
+* Sanctum Authentication
+* REST API
+* MySQL 8
 
-  🛠️ Tech Stack
+### Other Tools
 
-*  Frontend:  Flutter
-* Language: Dart
-*  Backend: laeaval
-*  Database: Mysql
-*  Storage: Firebase Storage
-*  Design: Figma
+* Dio HTTP Client
+* Figma
+* Git & GitHub
+* Android Studio
 
- 
+---
 
- 
+## 📂 Project Architecture
 
-  ⚙️ Installation & Setup
+```text
+Presentation Layer
+        ↓
+Riverpod State Management
+        ↓
+Repository Layer
+        ↓
+API Services + Hive Cache
+        ↓
+Laravel REST API
+        ↓
+MySQL Database
+```
 
- 
-git clone https://github.com/psgunathilake/soulshelf.git
-cd soulshelf
+---
+
+## 📱 Main Modules
+
+| Module               | Description                             |
+| -------------------- | --------------------------------------- |
+| Authentication       | Register, Login, Logout, Password Reset |
+| Home Dashboard       | Main navigation & recommendations       |
+| Books                | Add, edit, delete, rate books           |
+| Songs                | Music tracking & recommendations        |
+| Shows & Movies       | TV, Movie & Anime management            |
+| My Space             | Journal + Planner + Privacy             |
+| Collections          | Group media into collections            |
+| Statistics Dashboard | User activity analytics                 |
+| Chatbot              | AI assistant prototype                  |
+
+---
+
+## 🔄 Offline Support
+
+SoulShelf supports:
+
+* Local Hive caching
+* Offline media access
+* Offline journal writing
+* Pending write synchronization
+* Automatic sync when reconnected
+
+---
+
+## 🔐 Authentication Flow
+
+* User Registration
+* Email Verification
+* Login with Sanctum Token
+* Persistent Sessions
+* Secure Logout
+* Password Reset via Email
+
+---
+
+## 📸 File Upload Support
+
+Users can upload:
+
+* Media Cover Images
+* Profile Pictures
+* Header Images
+
+Stored securely using Laravel storage.
+
+---
+
+## 📊 Statistics Dashboard
+
+The dashboard provides:
+
+* Total media count
+* Average ratings
+* Journal activity
+* Mood trends
+* Category distributions
+* Reading / Watching progress
+
+---
+
+## 🚀 Future Improvements
+
+* Advanced AI recommendations
+* Gemini AI chatbot integration
+* Push notifications
+* Mood analytics visualization
+* Biometric authentication
+* Cloud backups
+* External media APIs integration
+
+---
+
+## 🧪 Development Methodology
+
+The project follows an **Agile iterative development approach** with phased implementation:
+
+1. Foundation Refactor
+2. Laravel Authentication Integration
+3. API Integration & Offline Sync
+4. Dashboard & Collections
+5. Recommendation Engine
+6. AI Chatbot Enhancements
+
+---
+
+## 📦 Installation
+
+### Frontend (Flutter)
+
+```bash
+git clone https://github.com/your-username/soulshelf.git
+cd soulshelf/project/soulshelf
+
 flutter pub get
 flutter run
- 
+```
 
- Requirements
+### Backend (Laravel)
 
-* Flutter SDK installed
-* Android Studio / VS Code
-* Android Emulator or Physical Device
+```bash
+cd backend
 
- 
+composer install
+php artisan key:generate
+php artisan migrate
+php artisan serve
+```
 
-  📂 Project Structure
+---
 
-lib/
- ├── screens/        # UI pages
- ├── components/     # Reusable widgets
- ├── models/         # Data models
- ├── logic/          # Business logic
- └── utils/          # Helper functions
- 
- 
+## ⚙️ Environment Setup
 
-  🧪 Current Status
+Example `.env` configuration:
 
-* ✅ UI/UX Design Completed
-* ✅ Core Features Implemented
-* ⚠ Firebase Integration In Progress
-* ⚠ Recommendation System (Prototype Stage)
-* ⚠ Chatbot (Basic Version)
+```env
+APP_NAME=SoulShelf
+APP_URL=http://localhost:8000
 
- 
+DB_CONNECTION=mysql
+DB_DATABASE=soulshelf
+DB_USERNAME=root
+DB_PASSWORD=your_password
+```
 
-  🔮 Future Improvements
+---
 
-* AI-powered recommendation system
-* Smart media suggestions
-* NLP-based summary feature
-* Advanced analytics dashboard
-* Improved chatbot intelligence
-* Cloud synchronization
+## 📌 Current Status
 
- 
- 👨‍💻 Author
+✅ Flutter Frontend Completed
+✅ Laravel Authentication Completed
+✅ REST API Integration Completed
+✅ Offline Sync System Completed
+✅ File Upload System Completed
+✅ PIN Hashing Security Completed
+🔄 Dashboard & Advanced Features In Progress
 
- P.S Gunathilake 
-BSc (Hons) Software Engineering
+---
 
- 
+## 👨‍💻 Author
 
- 📄 License
+**P.S Gunathilake**
+---
 
-This project is licensed under the MIT License.
+## 📄 License
+
+This project was developed for academic purposes.
+
+---
+
+## 📚 Documentation
+
+Project analysis and implementation phases are documented in the project files. 
+https://liveplymouthac-my.sharepoint.com/:f:/g/personal/10952618_students_plymouth_ac_uk/IgAECH1WzIPbS4lmQ9jz5COZAdRGqBLyvkSVbTn1ev1HY2M?e=fv7mOs
 
  
 
