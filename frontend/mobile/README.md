@@ -1,5 +1,4 @@
 ---
-
 # SoulShelf Flutter App 📱
 
 > Personal Media Tracker & Digital Journal Mobile Application
@@ -128,8 +127,6 @@ http://10.0.2.2:8000/api
 # 👨‍💻 Developer
 
 **P.S Gunathilake**
-BSc (Hons) Software Engineering
-PUSL3190 Computing Project
 
 ---
 
