@@ -1,4 +1,3 @@
----
 # SoulShelf Flutter App 📱
 
 > Personal Media Tracker & Digital Journal Mobile Application
