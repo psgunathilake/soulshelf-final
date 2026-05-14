@@ -24,8 +24,6 @@ The application is connected to a Laravel REST API backend with offline support 
 
 # 🎨 Figma Design
 
-Add your Figma design link here:
-
 ```text id="2qhkns"
  https://www.figma.com/design/TaO2I0psGSLVyUJqF5vAvF/soulshelf?node-id=0-1&t=TuqSvpOyKf6J2GOv-1
 ```
@@ -120,12 +118,6 @@ http://10.0.2.2:8000/api
 * Android
 * iOS
 * Windows
-
----
-
-# 👨‍💻 Developer
-
-**P.S Gunathilake**
 
 ---
 
